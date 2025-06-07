@@ -1,0 +1,391 @@
+/* CSS Variables - Matching your shop page */
+:root {
+  --primary: #D8AC9C;
+  --secondary: #5F939A;
+  --dark: #1B2021;
+  --light: #EAC8AF;
+  --white: #FFFFFF;
+  --gray: #f5f5f5;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--white);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Wishlist Header */
+.wishlist-header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wishlist-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wishlist-header h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.back-button {
+  color: var(--dark);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background-color: var(--gray);
+  color: var(--primary);
+}
+
+.cart-icon {
+  position: relative;
+  color: var(--dark);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: var(--gray);
+  color: var(--primary);
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--primary);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Wishlist Content */
+.wishlist-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.items-count {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.move-all-to-cart {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.move-all-to-cart:hover {
+  background-color: var(--primary);
+}
+
+/* Wishlist Grid */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.wishlist-item {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.wishlist-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.item-image {
+  position: relative;
+  flex: 0 0 150px;
+}
+
+.item-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.remove-item {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.remove-item:hover {
+  background-color: var(--primary);
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.rating {
+  color: #ffc107;
+  font-size: 0.9rem;
+}
+
+.stock {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.in-stock {
+  color: #4CAF50;
+}
+
+.low-stock {
+  color: #FF9800;
+}
+
+.out-of-stock {
+  color: #f44336;
+}
+
+.item-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-to-cart, .quick-view {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-to-cart {
+  background-color: var(--dark);
+  color: white;
+  flex: 1;
+}
+
+.add-to-cart:hover {
+  background-color: var(--primary);
+}
+
+.quick-view {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: var(--dark);
+}
+
+.quick-view:hover {
+  background-color: var(--gray);
+}
+
+/* Recently Viewed Section */
+.recently-viewed {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.recently-viewed h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.recent-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.recent-item {
+  cursor: pointer;
+}
+
+.recent-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.recent-item h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-item .price {
+  font-size: 0.9rem;
+}
+
+/* Footer - Matching your shop page */
+.shop-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.copyright {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wishlist-container {
+    padding: 0 1rem;
+  }
+
+  .wishlist-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .item-image {
+    flex: 0 0 auto;
+  }
+
+  .item-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .recent-items {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .wishlist-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

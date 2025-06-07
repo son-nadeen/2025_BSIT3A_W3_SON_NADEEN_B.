@@ -1,0 +1,599 @@
+:root {
+  --primary: #D8AC9C;
+  --primary-dark: #c79887;
+  --secondary: #5F939A;
+  --dark: #1B2021;
+  --light: #EAC8AF;
+  --white: #FFFFFF;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #777;
+  --error: #f44336;
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --info: #2196F3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--light-gray);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.track-header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-button {
+  color: var(--dark);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background-color: var(--light-gray);
+  color: var(--primary);
+}
+
+.track-header h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.wishlist-icon, .account-icon {
+  position: relative;
+  color: var(--dark);
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.wishlist-icon:hover, .account-icon:hover {
+  background-color: var(--light-gray);
+  color: var(--primary);
+}
+
+/* Main Content */
+.track-main {
+  flex: 1;
+  padding: 1.5rem 0;
+}
+
+.track-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Order Summary */
+.order-summary {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.order-id {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.order-date {
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+}
+
+.order-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .order-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+.delivery-address h3,
+.order-items h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.delivery-address p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.item-info p {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+}
+
+.item-info .price {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.order-total {
+  border-top: 1px solid var(--medium-gray);
+  padding-top: 1rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.grand-total {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--medium-gray);
+}
+
+/* Tracking Progress */
+.tracking-progress {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tracking-progress h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.progress-steps {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.6rem;
+  width: 2px;
+  background-color: var(--medium-gray);
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--dark-gray);
+}
+
+.step.completed .step-icon {
+  background-color: var(--success);
+  color: white;
+}
+
+.step.active .step-icon {
+  background-color: var(--info);
+  color: white;
+}
+
+.step-details {
+  flex: 1;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.step:last-child .step-details {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.step-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.step-details p {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+}
+
+.time {
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.tracking-number {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.tracking-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+}
+
+.tracking-btn:hover {
+  background-color: var(--primary);
+}
+
+/* Delivery Updates */
+.delivery-updates {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.delivery-updates h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.updates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.update {
+  display: flex;
+  gap: 1rem;
+}
+
+.update-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.update-details {
+  flex: 1;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.update:last-child .update-details {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.update-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.update-details p {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+}
+
+/* Help Section */
+.help-section {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.help-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.help-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .help-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.help-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.help-btn:hover {
+  background-color: var(--medium-gray);
+}
+
+.help-btn i {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.help-btn span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Footer Styles */
+.track-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 1.25rem 0;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--light);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: var(--white);
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--light);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .header-container,
+  .track-container,
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .step-details,
+  .update-details {
+    padding-bottom: 1rem;
+  }
+  
+  .step-icon,
+  .update-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Add these styles to your existing trackOrder.css */
+
+/* Delivery Info Section */
+.delivery-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.info-box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+}
+
+.info-box i {
+  font-size: 1.5rem;
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(216, 172, 156, 0.2);
+  border-radius: 50%;
+}
+
+.info-box h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: var(--dark-gray);
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.info-box .tracking-number {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Time in Transit Styles */
+.time-in-transit {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.estimated-time {
+  font-size: 0.85rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .delivery-info {
+    grid-template-columns: 1fr;
+  }
+}
